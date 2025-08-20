@@ -6,13 +6,13 @@ function calculateEMI() {
   const monthlyRate = annualRate / 12 / 100;
   const months = years * 12;
 
-  const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+  const emis = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / 
               (Math.pow(1 + monthlyRate, months) - 1);
 
   const emiResult = document.getElementById('emiResult');
-  if (isNaN(emi)) {
+  if (isNaN(emis)) {
     emiResult.innerText = "Please enter valid input.";
   } else {
-    emiResult.innerText = `Monthly EMI: ₹${emi.toFixed(2)}`;
+    emiResult.innerText = `Monthly EMI: ₹${emis.toFixed(2)}`;
   }
 }
